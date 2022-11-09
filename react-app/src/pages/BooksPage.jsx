@@ -6,6 +6,7 @@ export const BooksPage =({genres}) =>{
     const [activeTypeBook, setActiveTypeBook] = useState(genres[0]);
 return <div>
         <div className={styles.navigation_books_wrap}>
+            <div>
             <ul className={styles.list_navigation}>
             {
                 genres.map((genre) => <li key={Math.floor(Math.random() * 1000)}>
@@ -13,7 +14,9 @@ return <div>
                     </li>)
             }
         </ul>
-        <Books genre ={activeTypeBook}></Books>
+        
+        </div>
+        <Books genre ={activeTypeBook} initial_count={0}></Books>
 </div>
 
 

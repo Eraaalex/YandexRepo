@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  
 }
 .cost {
   font-weight: 700;
@@ -13,6 +12,7 @@
 .bookInformation {
   padding: 16px 20px;
   border-radius: 0.5rem;
+  background-color:#fff;
 }
 .bookInformation_wrap {
   display: grid;

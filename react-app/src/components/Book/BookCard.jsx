@@ -5,7 +5,7 @@ import solidStar from '../../icons/star_solid.svg';
 import emptyStar from '../../icons/star.svg';
 import classnames from "classnames";
 export const BookCard =(props) =>{
-    const [count,setCount] = useState(0);
+    const [count,setCount] = useState(props.initial_count);
     return <div className={styles.bookInformation}>
             
     <h3 className ={commonStyles.h3}>{props.book.name}</h3>
