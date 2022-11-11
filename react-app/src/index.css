@@ -11,9 +11,7 @@ body {
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* width: 800px; */
-background-color: #E9E9E9;
-min-height: 100vh;
+
 }
 
 code {

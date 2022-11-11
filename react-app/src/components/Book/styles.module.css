@@ -1,7 +1,8 @@
 .book_information {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 8px;  
+
 }
 .cost {
   font-weight: 700;
@@ -10,10 +11,13 @@
   
 }
 .bookInformation {
+  box-sizing: border-box;
   padding: 16px 20px;
   border-radius: 0.5rem;
-  background-color:#fff;
+  background-color: white;
+  height: 216px;
 }
+
 .bookInformation_wrap {
   display: grid;
   gap: 20px;

@@ -7,8 +7,10 @@
     background-color: #000;
     
 }
-.body{
+.main {
+    box-sizing: border-box;
     padding: 0 40px;
     background-color: #E9E9E9;
     padding-top: 51px;
+    min-height: calc(100vh - 67px);
 }
