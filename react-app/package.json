@@ -25,7 +25,8 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "parser": "@babel/eslint-parser"
   },
   "browserslist": {
     "production": [
@@ -40,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.19.1",
     "prettier": "^2.7.1"
   }
 }

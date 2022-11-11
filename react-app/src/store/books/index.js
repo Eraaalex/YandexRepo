@@ -1,7 +1,7 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {Statuses} from "../../constants/statuses";
 
-const intialState ={
+const initialState ={
     entities:{},
     ids:[],
     status: Statuses.idle,
