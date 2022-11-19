@@ -8,9 +8,9 @@ const initialState ={
 };
 
 export const genreSlice = createSlice({
-    name:'genre',
+    name:"genre",
     initialState,
-    reduces:{
+    reducers:{
         startLoading: (state, action) => {
             state.satus = Statuses.inProgress;
             state.entities ={};
@@ -21,10 +21,10 @@ export const genreSlice = createSlice({
             state.entities = action.payload.entities;
             state.ids = action.payload.ids;
         },
-        failLoding: (state,action) => {
+        failLoading: (state,action) => {
             state.satus = Statuses.failed;
             state.entities ={};
             state.ids = [];
         },
-    }
+    },
 });

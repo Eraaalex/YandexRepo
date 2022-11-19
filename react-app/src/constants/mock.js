@@ -106,11 +106,12 @@ export const genres =[
 
     {id:"3",
     name:"Переодические издания",
-    books:[{id:"4y7328frkm",
-    name:"Name of book",
-    cost: 4000,
-    stars: [1,1,1,1,0],
-    annotation:
+    books:[{
+        id:"4y7328frkm",
+        name:"Name of book",
+        cost: 4000,
+        stars: [1,1,1,1,0],
+        annotation:
         ["Очень интересная",
         "аннтация","к данной очень интересной книге!!!"],
 }],
