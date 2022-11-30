@@ -1,12 +1,13 @@
-.header{
+.header {
     display: flex;
     justify-content: space-between;
     padding: 0 40px;
     align-items: center;
     height: 67px;
     background-color: #000;
-    
+
 }
+
 .main {
     box-sizing: border-box;
     padding: 0 40px;

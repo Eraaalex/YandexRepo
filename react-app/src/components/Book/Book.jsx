@@ -1,17 +1,21 @@
 import styles from './styles.module.css';
 import commonStyles from '../../commonStyles.module.css';
-import { BookCard } from './BookCard';
-export const Book = (props) => {
-  return (
-    <div className={styles.bookInformation_wrap}>
-      <BookCard genreName={props.genreName} book={props.book}></BookCard>
+import {BookCard} from './BookCard';
+import {useSelector} from "react-redux";
+import {selectBookById} from "../../store/book/selectors";
 
-      <div className={styles.bookInformation}>
-        <h3 className={commonStyles.h3}>Аннотация</h3>
-        {props.book.annotation.map((paragraph) => (
-          <p>{paragraph}</p>
-        ))}
-      </div>
-    </div>
-  );
+export const Book = ({bookId, genreId}) => {
+    const book = useSelector((state) => selectBookById(state, bookId));
+    return (
+        <div className={styles.bookInformation_wrap}>
+            <BookCard bookId={bookId} key={bookId} genreId={genreId}></BookCard>
+
+            <div className={styles.bookInformation}>
+                <h3 className={commonStyles.h3}>Аннотация</h3>
+                {book.annotation.map((paragraph) => (
+                    <p>{paragraph}</p>
+                ))}
+            </div>
+        </div>
+    );
 };

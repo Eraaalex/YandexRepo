@@ -1,6 +1,6 @@
 import {bookSlice, genreSlice} from "./index";
 import {prepareData} from "../utils";
-import {selectBooks} from "./selectors";
+import {selectGenres} from "./selectors";
 
 export const loadBooksIfNotExist =(genreId) => (dispatch, getState) =>{
     dispatch(bookSlice.actions.startLoading());

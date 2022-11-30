@@ -1,42 +1,52 @@
-import {Books} from "../components/Books/Books"
-import {useEffect, useState} from "react";
-import classnames from "classnames";
+import {Books} from '../components/Books/Books';
+import {useEffect, useState} from 'react';
+import classnames from 'classnames';
 import styles from './styles.module.css';
-import {useDispatch, useSelector} from "react-redux";
-import {selectBooks} from "../store/genre/selectors";
-import {loadGenresIfNotExist} from "../store/genre/loadGenresIfNotExist";
+import {useDispatch, useSelector} from 'react-redux';
+import {selectGenres} from '../store/genre/selectors';
+import {loadGenresIfNotExist} from '../store/genre/loadGenresIfNotExist';
+import {Link, NavLink, Outlet} from "react-router-dom";
 
 export const BooksPage = () => {
     const dispatch = useDispatch();
-    const genres = useSelector((state) => selectBooks(state));
-    const [activeTypeBook, setActiveTypeBook] = useState(useSelector((state) => selectBooks(state)));
+    const genres = useSelector((state) => selectGenres(state));
+    const [activeTypeBook, setActiveTypeBook] = useState();
     console.log(genres);
+
     useEffect(() => {
-        dispatch(loadGenresIfNotExist);
-    },[])
+        genres.length > 0 && setActiveTypeBook(genres[0])
+    }, [genres])
 
-    console.log(activeTypeBook);
-    return <div>
-        <div className={styles.navigation_books_wrap}>
-            <div>
-                <ul className={styles.list_navigation}>
+    useEffect(() => {
 
-                        {genres.length > 0 && genres.map((genre) => 
-                        <li key={Math.floor(Math.random() * 1000)}>
-                                <button
+        dispatch(loadGenresIfNotExist)
+    }, [])
 
-                                    className={classnames(styles.button_navigation//, genre?.id === activeTypeBook.id && styles.button_navigation_active
-                                    )}
-                                    onClick={() => {
-                                        setActiveTypeBook(genre)
-                                    }}>{genre.name}</button>
-                            </li>
-                        )
-                        }
 
-                </ul>
+    return (
+        <div>
+            <div className={styles.navigation_books_wrap}>
+                <div className={styles.list_navigation}>
+
+                    {genres.length > 0 &&
+                        genres.map((genre) => (
+                            <NavLink
+                                to={genre.id}
+
+                                className={({isActive}) => classnames(styles.button_navigation,
+                                    {[styles.button_navigation_active]: isActive,})
+                                }
+                                key={genre.id}
+                            >
+                                <button>
+                                    {genre.name}
+                                </button>
+                            </NavLink>
+                        ))}
+                </div>
+
+                <Outlet/>
             </div>
-            {activeTypeBook && <Books genre={activeTypeBook} initial_count={0}></Books>}
         </div>
-    </div>
-}
+    );
+};

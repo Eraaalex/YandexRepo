@@ -1,6 +1,6 @@
-export const Statuses ={
+export const Statuses = {
     idle: "idle",
     inProgress: "inProgress",
     success: "success",
-    failed:"failed",
+    failed: "failed",
 }

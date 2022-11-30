@@ -1,9 +1,9 @@
 import {genreSlice} from "./index";
 import {prepareData} from "../utils";
-import {selectBooks} from "./selectors";
+import {selectGenres} from "./selectors";
 
 export const loadGenresIfNotExist = (dispatch, getState) =>{
-    if (selectBooks(getState())?.length > 0){
+    if (selectGenres(getState())?.length > 0){
         return;
     }
     dispatch(genreSlice.actions.startLoading());

@@ -1,9 +1,10 @@
 import { Review } from "../Review/Review"
 import commonStyles from "../../commonStyles.module.css"
-export const Reviews =({book}) =>{
+export const Reviews =({bookReviews, bookStars}) =>{
+
     return <div className={commonStyles.list_gap}>
         {
-            book.reviews.map((review) => <Review review= {review} key ={review.id} stars ={book.stars}></Review>)
+            bookReviews.map((id) => <Review reviewId= {id} key ={id} stars ={bookStars}></Review>)
         }
     </div>
 }
